@@ -118,4 +118,45 @@ INSERT INTO cafe.inventory (item, category, unit_size, unit_cost, units_availabl
 INSERT INTO cafe.inventory (item, category, unit_size, unit_cost, units_available, units_ordered) VALUES 
 ("Sweet N' Low", "Flavorings", "Packets", 0.10, 92, 8);
 
+INSERT INTO cafe.inventory (item, category, unit_size, unit_cost, units_available, units_ordered) VALUES 
+("Whipped Cream", "Flavorings", "Pound", 12.50, 7, 9);
+
 SELECT * FROM cafe.inventory;
+
+CREATE TABLE cafe.menu (
+id INT AUTO_INCREMENT PRIMARY KEY,
+item VARCHAR (255),
+price DECIMAL (18, 2),
+ingredient_first VARCHAR(255) NOT NULL,
+ingredient_first_id INT NOT NULL,
+ingredient_second VARCHAR(255),
+ingredient_second_id INT,
+ingredient_third VARCHAR(255),
+ingredient_third_id INT,
+ingredient_fourth VARCHAR(255),
+ingredient_fourth_id INT,
+ingredient_fifth VARCHAR(255),
+ingredient_fifth_id INT,
+possible_as_addon VARCHAR(5));
+
+INSERT INTO cafe.menu (item, price, ingredient_first, ingredient_first_id, ingredient_second, ingredient_second_id, ingredient_third, ingredient_third_id, ingredient_fourth, ingredient_fourth_id, ingredient_fifth, ingredient_fifth_id, possible_as_addon) VALUES
+("Black Coffee", 5.00, "Espresso Beans", 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, "No");
+
+INSERT INTO cafe.menu (item, price, ingredient_first, ingredient_first_id, ingredient_second, ingredient_second_id, ingredient_third, ingredient_third_id, ingredient_fourth, ingredient_fourth_id, ingredient_fifth, ingredient_fifth_id, possible_as_addon) VALUES
+("Regular Latte", 7.00, "Espresso Beans", 1, "Whole Milk", 34, NULL, NULL, NULL, NULL, NULL, NULL, "No");
+
+INSERT INTO cafe.menu (item, price, ingredient_first, ingredient_first_id, ingredient_second, ingredient_second_id, ingredient_third, ingredient_third_id, ingredient_fourth, ingredient_fourth_id, ingredient_fifth, ingredient_fifth_id, possible_as_addon) VALUES
+("Non-Fat Latte", 7.00, "Espresso Beans", 1, "Skim", 23, NULL, NULL, NULL, NULL, NULL, NULL, "No");
+
+INSERT INTO cafe.menu (item, price, ingredient_first, ingredient_first_id, ingredient_second, ingredient_second_id, ingredient_third, ingredient_third_id, ingredient_fourth, ingredient_fourth_id, ingredient_fifth, ingredient_fifth_id, possible_as_addon) VALUES
+("Decaf Latte", 7.00, "Decaf Coffee Beans", 1, "Whole Milk", 34, NULL, NULL, NULL, NULL, NULL, NULL, "No");
+
+INSERT INTO cafe.menu (item, price, ingredient_first, ingredient_first_id, ingredient_second, ingredient_second_id, ingredient_third, ingredient_third_id, ingredient_fourth, ingredient_fourth_id, ingredient_fifth, ingredient_fifth_id, possible_as_addon) VALUES
+("Decaf Black Coffee", 5.00, "Decaf Coffee Beans", 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, "No");
+
+INSERT INTO cafe.menu (item, price, ingredient_first, ingredient_first_id, ingredient_second, ingredient_second_id, ingredient_third, ingredient_third_id, ingredient_fourth, ingredient_fourth_id, ingredient_fifth, ingredient_fifth_id, possible_as_addon) VALUES
+("Substitute Soy Milk", 1.00, "Soy", 24, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, "Yes");
+
+SELECT * FROM cafe.inventory;
+
+SELECT * FROM cafe.menu;
