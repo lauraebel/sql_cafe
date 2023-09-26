@@ -32,13 +32,13 @@ INSERT INTO cafe.inventory (item, category, unit_size, unit_cost, units_availabl
 ("Green Tea", "Tea", "Box", 2.50, 6, 4);
 
 INSERT INTO cafe.inventory (item, category, unit_size, unit_cost, units_available, units_ordered) VALUES 
-("Scone", "Food", "Individual", 5.75, 23, NULL);
+("Scone", "Food", "Pound", 5.75, 23, NULL);
 
 INSERT INTO cafe.inventory (item, category, unit_size, unit_cost, units_available, units_ordered) VALUES 
-("Biscotti", "Food", "Individual", 6.30, 30, 5);
+("Biscotti", "Food", "Pound", 6.30, 30, 5);
 
 INSERT INTO cafe.inventory (item, category, unit_size, unit_cost, units_available, units_ordered) VALUES 
-("Bagel", "Food", "Individual", 5.45, 43, 5);
+("Bagel", "Food", "Pound", 5.45, 43, 5);
 
 INSERT INTO cafe.inventory (item, category, unit_size, unit_cost, units_available, units_ordered) VALUES 
 ("Yogurt", "Food", "Quart", 10.50, 4, 3);
@@ -66,9 +66,6 @@ INSERT INTO cafe.inventory (item, category, unit_size, unit_cost, units_availabl
 
 INSERT INTO cafe.inventory (item, category, unit_size, unit_cost, units_available, units_ordered) VALUES 
 ("Cold Drink Cups", "Supplies", "Sleeve", 8.90, 21, 9);
-
-INSERT INTO cafe.inventory (item, category, unit_size, unit_cost, units_available, units_ordered) VALUES 
-("Lemons", "Flavorings", "Individual", 0.60, 23, 7);
 
 INSERT INTO cafe.inventory (item, category, unit_size, unit_cost, units_available, units_ordered) VALUES 
 ("Sugar", "Flavorings", "Packets", 0.10, 75, 20);
@@ -110,7 +107,7 @@ INSERT INTO cafe.inventory (item, category, unit_size, unit_cost, units_availabl
 ("Whole Milk", "Milk", "Quart", 5.00, 2, 5);
 
 INSERT INTO cafe.inventory (item, category, unit_size, unit_cost, units_available, units_ordered) VALUES 
-("Glazed Donut", "Food", "Individual", 7.54, 27, 3);
+("Glazed Donut", "Food", "Pound", 7.54, 27, 3);
 
 INSERT INTO cafe.inventory (item, category, unit_size, unit_cost, units_available, units_ordered) VALUES 
 ("Stevia", "Flavorings", "Packets", 0.10, 80, 20);
@@ -133,30 +130,120 @@ ingredient_second VARCHAR(255),
 ingredient_second_id INT,
 ingredient_third VARCHAR(255),
 ingredient_third_id INT,
-ingredient_fourth VARCHAR(255),
-ingredient_fourth_id INT,
-ingredient_fifth VARCHAR(255),
-ingredient_fifth_id INT,
 possible_as_addon VARCHAR(5));
 
-INSERT INTO cafe.menu (item, price, ingredient_first, ingredient_first_id, ingredient_second, ingredient_second_id, ingredient_third, ingredient_third_id, ingredient_fourth, ingredient_fourth_id, ingredient_fifth, ingredient_fifth_id, possible_as_addon) VALUES
-("Black Coffee", 5.00, "Espresso Beans", 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, "No");
+INSERT INTO cafe.menu (item, price, ingredient_first, ingredient_first_id, ingredient_second, ingredient_second_id, ingredient_third, ingredient_third_id, possible_as_addon) VALUES
+("Black Coffee", 5.00, "Espresso Beans", 1, NULL, NULL, NULL, NULL, "No");
 
-INSERT INTO cafe.menu (item, price, ingredient_first, ingredient_first_id, ingredient_second, ingredient_second_id, ingredient_third, ingredient_third_id, ingredient_fourth, ingredient_fourth_id, ingredient_fifth, ingredient_fifth_id, possible_as_addon) VALUES
-("Regular Latte", 7.00, "Espresso Beans", 1, "Whole Milk", 34, NULL, NULL, NULL, NULL, NULL, NULL, "No");
+INSERT INTO cafe.menu (item, price, ingredient_first, ingredient_first_id, ingredient_second, ingredient_second_id, ingredient_third, ingredient_third_id, possible_as_addon) VALUES
+("Regular Latte", 7.00, "Espresso Beans", 1, "Whole Milk", 33, NULL, NULL, "No");
 
-INSERT INTO cafe.menu (item, price, ingredient_first, ingredient_first_id, ingredient_second, ingredient_second_id, ingredient_third, ingredient_third_id, ingredient_fourth, ingredient_fourth_id, ingredient_fifth, ingredient_fifth_id, possible_as_addon) VALUES
-("Non-Fat Latte", 7.00, "Espresso Beans", 1, "Skim", 23, NULL, NULL, NULL, NULL, NULL, NULL, "No");
+INSERT INTO cafe.menu (item, price, ingredient_first, ingredient_first_id, ingredient_second, ingredient_second_id, ingredient_third, ingredient_third_id, possible_as_addon) VALUES
+("Non-Fat Latte", 7.00, "Espresso Beans", 1, "Skim", 222, NULL, NULL, "No");
 
-INSERT INTO cafe.menu (item, price, ingredient_first, ingredient_first_id, ingredient_second, ingredient_second_id, ingredient_third, ingredient_third_id, ingredient_fourth, ingredient_fourth_id, ingredient_fifth, ingredient_fifth_id, possible_as_addon) VALUES
-("Decaf Latte", 7.00, "Decaf Coffee Beans", 1, "Whole Milk", 34, NULL, NULL, NULL, NULL, NULL, NULL, "No");
+INSERT INTO cafe.menu (item, price, ingredient_first, ingredient_first_id, ingredient_second, ingredient_second_id, ingredient_third, ingredient_third_id, possible_as_addon) VALUES
+("Decaf Latte", 7.00, "Decaf Coffee Beans", 2, "Whole Milk", 33, NULL, NULL, "No");
 
-INSERT INTO cafe.menu (item, price, ingredient_first, ingredient_first_id, ingredient_second, ingredient_second_id, ingredient_third, ingredient_third_id, ingredient_fourth, ingredient_fourth_id, ingredient_fifth, ingredient_fifth_id, possible_as_addon) VALUES
-("Decaf Black Coffee", 5.00, "Decaf Coffee Beans", 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, "No");
+INSERT INTO cafe.menu (item, price, ingredient_first, ingredient_first_id, ingredient_second, ingredient_second_id, ingredient_third, ingredient_third_id, possible_as_addon) VALUES
+("Decaf Black Coffee", 5.00, "Decaf Coffee Beans", 2, NULL, NULL, NULL, NULL, "No");
 
-INSERT INTO cafe.menu (item, price, ingredient_first, ingredient_first_id, ingredient_second, ingredient_second_id, ingredient_third, ingredient_third_id, ingredient_fourth, ingredient_fourth_id, ingredient_fifth, ingredient_fifth_id, possible_as_addon) VALUES
-("Substitute Soy Milk", 1.00, "Soy", 24, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, "Yes");
+INSERT INTO cafe.menu (item, price, ingredient_first, ingredient_first_id, ingredient_second, ingredient_second_id, ingredient_third, ingredient_third_id, possible_as_addon) VALUES
+("Substitute Soy Milk", 1.00, "Soy", 23, NULL, NULL, NULL, NULL, "Yes");
 
-SELECT * FROM cafe.inventory;
+INSERT INTO cafe.menu (item, price, ingredient_first, ingredient_first_id, ingredient_second, ingredient_second_id, ingredient_third, ingredient_third_id, possible_as_addon) VALUES
+("Substitute Almond Milk", 1.00, "Almond", 24, NULL, NULL, NULL, NULL, "Yes");
+
+INSERT INTO cafe.menu (item, price, ingredient_first, ingredient_first_id, ingredient_second, ingredient_second_id, ingredient_third, ingredient_third_id, possible_as_addon) VALUES
+("Peppermint Latte", 9.00, "Espresso Beans", 1, "Whole Milk", 33, "Peppermint Syrup", 28, "No");
+
+INSERT INTO cafe.menu (item, price, ingredient_first, ingredient_first_id, ingredient_second, ingredient_second_id, ingredient_third, ingredient_third_id, possible_as_addon) VALUES
+("Non-Fat Peppermint Latte", 9.00, "Espresso Beans", 1, "Skim", 22, "Peppermint Syrup", 28, "No");
+
+INSERT INTO cafe.menu (item, price, ingredient_first, ingredient_first_id, ingredient_second, ingredient_second_id, ingredient_third, ingredient_third_id, possible_as_addon) VALUES
+("Pumpkin Latte", 9.50, "Espresso Beans", 1, "Whole Milk", 33, "Pumpkin Syrup", 27, "No");
+
+INSERT INTO cafe.menu (item, price, ingredient_first, ingredient_first_id, ingredient_second, ingredient_second_id, ingredient_third, ingredient_third_id, possible_as_addon) VALUES
+("Non-Fat Pumpkin Latte", 9.50, "Espresso Beans", 1, "Skim", 22, "Pumpkin Syrup", 27, "No");
+
+INSERT INTO cafe.menu (item, price, ingredient_first, ingredient_first_id, ingredient_second, ingredient_second_id, ingredient_third, ingredient_third_id, possible_as_addon) VALUES
+("Decaf Pumpkin Latte", 9.50, "Decaf Coffee Beans", 2, "Whole Milk", 33, "Pumpkin Syrup", 27, "No");
+
+INSERT INTO cafe.menu (item, price, ingredient_first, ingredient_first_id, ingredient_second, ingredient_second_id, ingredient_third, ingredient_third_id, possible_as_addon) VALUES
+("Decaf Peppermint Latte", 9.00, "Decaf Coffee Beans", 2, "Whole Milk", 33, "Peppermint Syrup", 28, "No");
+
+INSERT INTO cafe.menu (item, price, ingredient_first, ingredient_first_id, ingredient_second, ingredient_second_id, ingredient_third, ingredient_third_id, possible_as_addon) VALUES
+("Whipped Cream Topping", 0.50, "Whipped Cream", 37, NULL, NULL, NULL, NULL, "Yes");
+
+INSERT INTO cafe.menu (item, price, ingredient_first, ingredient_first_id, ingredient_second, ingredient_second_id, ingredient_third, ingredient_third_id, possible_as_addon) VALUES
+("Mocha", 10.00, "Espresso Beans", 1, "Whole Milk", 33, "Chocolate Syrup", 25, "No");
+
+INSERT INTO cafe.menu (item, price, ingredient_first, ingredient_first_id, ingredient_second, ingredient_second_id, ingredient_third, ingredient_third_id, possible_as_addon) VALUES
+("Non-Fat Mocha", 10.00, "Espresso Beans", 1, "Skim", 22, "Chocolate Syrup", 25, "No");
+
+INSERT INTO cafe.menu (item, price, ingredient_first, ingredient_first_id, ingredient_second, ingredient_second_id, ingredient_third, ingredient_third_id, possible_as_addon) VALUES
+("Decaf Mocha", 10.00, "Decaf Coffee Beans", 2, "Whole Milk", 33, "Chocolate Syrup", 25, "No");
+
+INSERT INTO cafe.menu (item, price, ingredient_first, ingredient_first_id, ingredient_second, ingredient_second_id, ingredient_third, ingredient_third_id, possible_as_addon) VALUES
+("Cinnamon Powder Topping", 0.50, "Cinnamon Powder", 26, NULL, NULL, NULL, NULL, "Yes");
+
+INSERT INTO cafe.menu (item, price, ingredient_first, ingredient_first_id, ingredient_second, ingredient_second_id, ingredient_third, ingredient_third_id, possible_as_addon) VALUES
+("Hazelnut", 0.50, "Hazelnut Syrup", 3, NULL, NULL, NULL, NULL, "Yes");
+
+INSERT INTO cafe.menu (item, price, ingredient_first, ingredient_first_id, ingredient_second, ingredient_second_id, ingredient_third, ingredient_third_id, possible_as_addon) VALUES
+("Vanilla", 0.50, "Vanilla Syrup", 4, NULL, NULL, NULL, NULL, "Yes");
+
+INSERT INTO cafe.menu (item, price, ingredient_first, ingredient_first_id, ingredient_second, ingredient_second_id, ingredient_third, ingredient_third_id, possible_as_addon) VALUES
+("Peppermint", 0.50, "Peppermint Syrup", 28, NULL, NULL, NULL, NULL, "Yes");
+
+INSERT INTO cafe.menu (item, price, ingredient_first, ingredient_first_id, ingredient_second, ingredient_second_id, ingredient_third, ingredient_third_id, possible_as_addon) VALUES
+("Pumpkin", 0.50, "Pumpkin Syrup", 27, NULL, NULL, NULL, NULL, "Yes");
+
+INSERT INTO cafe.menu (item, price, ingredient_first, ingredient_first_id, ingredient_second, ingredient_second_id, ingredient_third, ingredient_third_id, possible_as_addon) VALUES
+("Plain Bagel", 3.50, "Bagel", 11, NULL, NULL, NULL, NULL, "No");
+
+INSERT INTO cafe.menu (item, price, ingredient_first, ingredient_first_id, ingredient_second, ingredient_second_id, ingredient_third, ingredient_third_id, possible_as_addon) VALUES
+("Buttered Bagel", 4.00, "Bagel", 11, "Butter Packets", 30, NULL, NULL, "No");
+
+INSERT INTO cafe.menu (item, price, ingredient_first, ingredient_first_id, ingredient_second, ingredient_second_id, ingredient_third, ingredient_third_id, possible_as_addon) VALUES
+("Butter", 0.10, "Butter Packets", 30, NULL, NULL, NULL, NULL, "Yes");
+
+INSERT INTO cafe.menu (item, price, ingredient_first, ingredient_first_id, ingredient_second, ingredient_second_id, ingredient_third, ingredient_third_id, possible_as_addon) VALUES
+("English Breakfast Tea", 4.50, "English Breakfast", 5, NULL, NULL, NULL, NULL, "No");
+
+INSERT INTO cafe.menu (item, price, ingredient_first, ingredient_first_id, ingredient_second, ingredient_second_id, ingredient_third, ingredient_third_id, possible_as_addon) VALUES
+("Oolong Tea", 4.75, "Oolong", 6, NULL, NULL, NULL, NULL, "No");
+
+INSERT INTO cafe.menu (item, price, ingredient_first, ingredient_first_id, ingredient_second, ingredient_second_id, ingredient_third, ingredient_third_id, possible_as_addon) VALUES
+("Earl Grey Tea", 4.75, "Earl Grey", 7, NULL, NULL, NULL, NULL, "No");
+
+INSERT INTO cafe.menu (item, price, ingredient_first, ingredient_first_id, ingredient_second, ingredient_second_id, ingredient_third, ingredient_third_id, possible_as_addon) VALUES
+("Green Tea", 4.20, "Green Tea", 8, NULL, NULL, NULL, NULL, "No");
+
+INSERT INTO cafe.menu (item, price, ingredient_first, ingredient_first_id, ingredient_second, ingredient_second_id, ingredient_third, ingredient_third_id, possible_as_addon) VALUES
+("Scone", 4.55, "Scone", 9, NULL, NULL, NULL, NULL, "No");
+
+INSERT INTO cafe.menu (item, price, ingredient_first, ingredient_first_id, ingredient_second, ingredient_second_id, ingredient_third, ingredient_third_id, possible_as_addon) VALUES
+("Biscotti", 4.80, "Biscotti", 10, NULL, NULL, NULL, NULL, "No");
+
+INSERT INTO cafe.menu (item, price, ingredient_first, ingredient_first_id, ingredient_second, ingredient_second_id, ingredient_third, ingredient_third_id, possible_as_addon) VALUES
+("Cold Brew", 7.50, "Cold Brew", 17, NULL, NULL, NULL, NULL, "No");
+
+INSERT INTO cafe.menu (item, price, ingredient_first, ingredient_first_id, ingredient_second, ingredient_second_id, ingredient_third, ingredient_third_id, possible_as_addon) VALUES
+("Iced Tea", 4.80, "Iced Tea", 18, NULL, NULL, NULL, NULL, "No");
+
+INSERT INTO cafe.menu (item, price, ingredient_first, ingredient_first_id, ingredient_second, ingredient_second_id, ingredient_third, ingredient_third_id, possible_as_addon) VALUES
+("Parfait", 12.50, "Yogurt", 12, "Mixed Berries", 15, "Granola", 29, "No");
+
+INSERT INTO cafe.menu (item, price, ingredient_first, ingredient_first_id, ingredient_second, ingredient_second_id, ingredient_third, ingredient_third_id, possible_as_addon) VALUES
+("Sugar Packets", 0.00, "Sugar", 21, NULL, NULL, NULL, NULL, "Yes");
+
+INSERT INTO cafe.menu (item, price, ingredient_first, ingredient_first_id, ingredient_second, ingredient_second_id, ingredient_third, ingredient_third_id, possible_as_addon) VALUES
+("Stevia Packets", 0.00, "Stevia", 35, NULL, NULL, NULL, NULL, "Yes");
+
+INSERT INTO cafe.menu (item, price, ingredient_first, ingredient_first_id, ingredient_second, ingredient_second_id, ingredient_third, ingredient_third_id, possible_as_addon) VALUES
+("Sweet 'N Low Packets", 0.00, "Sweet N' Low", 21, NULL, NULL, NULL, NULL, "Yes");
+
+INSERT INTO cafe.menu (item, price, ingredient_first, ingredient_first_id, ingredient_second, ingredient_second_id, ingredient_third, ingredient_third_id, possible_as_addon) VALUES
+("Donut", 8.50, "Glazed Donut", 34, NULL, NULL, NULL, NULL, "No");
 
 SELECT * FROM cafe.menu;
