@@ -247,3 +247,72 @@ INSERT INTO cafe.menu (item, price, ingredient_first, ingredient_first_id, ingre
 ("Donut", 8.50, "Glazed Donut", 34, NULL, NULL, NULL, NULL, "No");
 
 SELECT * FROM cafe.menu;
+
+CREATE TABLE cafe.customers (
+id INT AUTO_INCREMENT PRIMARY KEY,
+first_name VARCHAR (255),
+last_name VARCHAR(255),
+email VARCHAR(255),
+rewards_member VARCHAR(5));
+
+INSERT INTO cafe.customers (first_name, last_name, email, rewards_member) VALUES
+("John", "Doe", "john.doe@gmail.com", "Yes");
+
+INSERT INTO cafe.customers (first_name, last_name, email, rewards_member) VALUES
+("Jane", "Doe", "jane.doe@gmail.com", "Yes");
+
+INSERT INTO cafe.customers (first_name, last_name, email, rewards_member) VALUES
+("Tina", "Turner", "tina.turner@gmail.com", "No");
+
+INSERT INTO cafe.customers (first_name, last_name, email, rewards_member) VALUES
+("Fred", "Ngyuen", "fred.n@yahoo.com", "Yes");
+
+INSERT INTO cafe.customers (first_name, last_name, email, rewards_member) VALUES
+("Jessica", "Day", "jess.day@gmail.com", "Yes");
+
+INSERT INTO cafe.customers (first_name, last_name, email, rewards_member) VALUES
+("Winston", "Bishop", "winnythebish@yahoo.com", "No");
+
+INSERT INTO cafe.customers (first_name, last_name, email, rewards_member) VALUES
+("Winston", "Schmidt", "schmidt@gmail.com", "Yes");
+
+INSERT INTO cafe.customers (first_name, last_name, email, rewards_member) VALUES
+("Cece", "Parikh", "mrsceceschmidt@gmail.com", "Yes");
+
+INSERT INTO cafe.customers (first_name, last_name, email, rewards_member) VALUES
+("Nick", "Miller", "itsnickmillertime@gmail.com", "No");
+
+INSERT INTO cafe.customers (first_name, last_name, email, rewards_member) VALUES
+("Ferguson", "Bishop", "fergiebishop@gmail.com", "No");
+
+INSERT INTO cafe.customers (first_name, last_name, email, rewards_member) VALUES
+("Moises", "Purdue", "moisesp@yahoo.com", "Yes");
+
+INSERT INTO cafe.customers (first_name, last_name, email, rewards_member) VALUES
+("Ruth", "Bader", "rbg@gmail.com", "Yes");
+
+INSERT INTO cafe.customers (first_name, last_name, email, rewards_member) VALUES
+("Emiliya", "Akopyan", "em.akop@gmail.com", "Yes");
+
+INSERT INTO cafe.customers (first_name, last_name, email, rewards_member) VALUES
+("Luci", "Morin", "luciannemorin@yahoo.com", "Yes");
+
+INSERT INTO cafe.customers (first_name, last_name, email, rewards_member) VALUES
+("Paige", "Dorne", "pdorneee@gmail.com", "No");
+
+INSERT INTO cafe.customers (first_name, last_name, email, rewards_member) VALUES
+("Laura", "Ebel", "laura.ebel7@gmail.com", "Yes");
+
+INSERT INTO cafe.customers (first_name, last_name, email, rewards_member) VALUES
+("McKenna", "Ross", "kenna.ross@gmail.com", "Yes");
+
+INSERT INTO cafe.customers (first_name, last_name, email, rewards_member) VALUES
+("Latesha", "Byler", "teesh@yahoo.com", "Yes");
+
+INSERT INTO cafe.customers (first_name, last_name, email, rewards_member) VALUES
+("Melissa", "Ondash", "m.ceo@gmail.com", "Yes");
+
+INSERT INTO cafe.customers (first_name, last_name, email, rewards_member) VALUES
+("Paul", "Genzlinger", "pgenz@yahoo.com", "No");
+
+SELECT * FROM cafe.customers;
